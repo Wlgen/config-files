@@ -1,0 +1,101 @@
+//global properties section
+* {
+  text-color: #D0D0D0;
+  background-color: transparent;
+  bg-color: #3F4E5BCC;
+  txt-color: #D0D0D0;
+  txt-color-focus: #1D2E3E;
+  }
+#window {
+    background-color: @bg-color;
+    fullscreen: true;
+    location: center;
+    anchor:   center;
+    transparency: "real";
+    font: "Roboto 20";
+    children: [vertbox];
+}
+#inputbar {
+    background: transparent;
+    foreground: transparent;
+    text-color: @txt-color;
+    padding: 4px;
+    border: 0px 0px 2px 0px;
+}
+#dummyl{
+	expand: true;
+	background: transparent;
+}
+#dummyr{
+	expand: true;
+	background: transparent;
+}
+#dummyt{
+	expand:true;
+	backgroud: transparent;
+}
+#dummyb{
+	expand: true;
+	background: transparent;
+}
+#vertbox{
+	orientation: vertical;
+	children: [dummyt, horibox, dummyb];
+}
+#horibox{
+	orientation: horizontal;
+	expand: true;
+	children: [dummyl, mainbox, dummyr];
+}
+#mainbox {
+    expand: true;
+    background-color: transparent;
+    spacing: 10px;
+}
+#scrollbar{
+	background-color: @txt-color-focus;
+	handle-color: @bg-color;
+	handle-width: 5px;
+}
+#listview {
+    fixed-height: true;
+    lines: 4;
+    layout: vertical;
+    spacing: 10px;
+    scrollbar: true;
+    scrollbar-width: 5px;
+    cycle: false;
+    dynamic: true;
+}
+#element selected  normal {
+    background-color: @txt-color-focus;
+}
+#element normal active {
+    text-color: @txt-color;
+}
+#element normal urgent {
+    text-color: #e3431d;
+}
+
+#element alternate active {
+    text-color: @txt-color;
+}
+#element alternate urgent {
+    text-color: #e3431d;
+}
+#element selected active {
+    background-color: @txt-color-focus;
+    text-color: @txt-color;
+}
+#element selected urgent {
+    background-color: #e3431d;
+    text-color: @txt-color;
+}
+#inputbar {
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+#textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+}
